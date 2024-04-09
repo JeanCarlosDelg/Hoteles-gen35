@@ -1,0 +1,29 @@
+.perfil__container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 200px;
+  padding: 0 0.6em;
+  gap: 0.2em;
+  position: absolute;
+  right: 0.5em;
+  top: 1.4em;
+  color: white;
+  cursor: pointer;
+
+  &:hover {
+    color: #eb1515d7;
+  }
+
+  .perfil__name-cont {
+    text-align: center;
+    margin: auto 0;
+  }
+
+  .perfil__img {
+    width: 100%;
+    max-width: 80px;
+    border: 2px solid red;
+    border-radius: 50%;
+  }
+}
