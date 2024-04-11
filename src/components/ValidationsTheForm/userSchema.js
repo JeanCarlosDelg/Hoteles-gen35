@@ -13,9 +13,6 @@ export const userSchemaRegister = z.object({
     }),
   lastName: z
     .string()
-    // .refine((firstName) => !isNaN(firstName), {
-    //   message: "tu nombre no debe llevar numeros",
-    // })
     .min(3, {
       message: "Last Name must be at least 3 characters long",
     })
@@ -37,16 +34,3 @@ export const userSchemaRegister = z.object({
       errorMap: () => ({ message: "Please select you gender" }),
     }),
 });
-
-// export const userSchemaLogin = z.object({
-//   email: z
-//     .string()
-//     .email({
-//       message: "Please enter a valid email",
-//     }),
-//   password: z
-//     .string()
-//     .min(6, {
-//       message: "Password must be at least 6 characters long",
-//     }),
-// })

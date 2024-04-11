@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom'
 
 const Slider = ({ hotel }) => {
 
-  // const info = hotel?.images
   const slideShow = useRef(null)
   const intervalRef = useRef(null)
 

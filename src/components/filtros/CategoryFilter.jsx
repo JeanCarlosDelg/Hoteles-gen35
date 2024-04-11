@@ -40,12 +40,6 @@ const CategoryFilter = () => {
           cities?.map(city => (
             <div key={city.id}>
               <li className='cities__items' onClick={() => handleFilterCity(city.id)} key={city.id}>{city.name}</li>
-              {/* <li className='cities__items' key={city.id}>{city.name}</li>
-              <input 
-                type="checkbox" 
-                name={city.name}
-                onClick={() => handleFilterCity(city.id)} 
-              /> */}
             </div>
           ))
         }

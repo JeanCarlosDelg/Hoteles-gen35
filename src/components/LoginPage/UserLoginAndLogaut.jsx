@@ -28,8 +28,8 @@ const UserLoginAndLogaut = () => {
       </button>
 
       <nav className={`perfil__nav ${menu ? 'isActivate' : ''}`}>
-        <div onClick={handlePerfil} className='perfil__name-cont'>
-          <div className='perfil__name'>
+        <div className='perfil__name-cont'>
+          <div  className='perfil__name'>
             <h2 className='perfil__names'>
               {user?.firstName}
             </h2>

@@ -1,4 +1,5 @@
 .reserve__container {
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -22,7 +23,7 @@
 
     .container__fechas {
       display: flex;
-      justify-content: center;
+      justify-content: space-around;
       width: 100%;
       flex-wrap: wrap;
       gap: 0.5em;
@@ -30,12 +31,19 @@
       .reserve__label {
         display: flex;
         justify-content: space-between;
+        align-items: center;
         margin: 0 0.6em;
-        width: 210px;
+        width: 260px;
+        height: 30px;
 
         .reserve__span {
+          font-size: 1.2em;
           color: rgb(226, 24, 24);
           font-weight: 600;
+        }
+
+        .reserve__input {
+          font-size: 1em;
         }
       }
     }
@@ -60,7 +68,7 @@
     box-shadow: 0 0 .8em #e02323f1;
     border: none;
     border-radius: 1.5em;
-    font-size: 0.8em;
+    font-size: 1.1em;
     font-weight: 600;
     color: #fff;
 

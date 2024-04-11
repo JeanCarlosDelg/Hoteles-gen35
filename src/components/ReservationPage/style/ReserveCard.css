@@ -56,14 +56,6 @@
         display: flex;
         justify-content: space-around;
         font-weight: 600;
-
-        .reserver__text {
-          width: 140px;
-        }
-
-        .reserver__number1 {
-          padding-left: 0.5em;
-        }
       }
     }
   }
@@ -92,12 +84,78 @@
   }
 }
 
+@media screen and (max-width:850px) {
+  .reserver__container {
+    flex-direction: column;
+    width: 100%;
+    max-width: 200px;
+    
+    .reserver__sub-cont {
+      flex-direction: column;
+      gap: 1em;
+      
+      .reserver__header {
+        max-width: 270px;
+        
+        .reserver__img {
+          height: 150px;
+          border-radius: 20px 20px 0 0;
+        }
+      }
+      
+      .reserver__hotel {
 
-
-
-
-
-.img__modal {
-  width: 100%;
-  max-width: 300px;
+        .reserver__name {
+          font-size: 1em;
+          padding: 0 0.5em;
+        }
+        
+        .reserver__city {
+          padding: 0 0.5em;
+          font-size: 0.9em;
+        }
+        
+        .reserver__coment {
+          font-size: 0.8em;
+          padding: 0 0.5em;
+        }
+      }
+    }
+  
+    .reserver__info {
+      width: 100%;
+  
+      .reserver__list {
+        font-size: 0.9em;
+        height: 100%;
+        gap: 0.3em;
+        padding: 0 0.5em;
+  
+        .reserver__item {
+          justify-content: space-between;
+          font-weight: 500;
+          font-size: 0.9em;
+        }
+      }
+    }
+  
+    .reserver__btn-cont {
+      margin: 0 auto;
+      margin-bottom: 1em;
+  
+      .reserver__btn {
+        width: 40px;
+        height: 40px;
+        border: none;
+        border-radius: 1em;
+        background-color: rgb(253, 93, 87);
+        cursor: pointer;
+  
+        .btn-img {
+          font-size: 1.4em;
+          color: white;
+        }
+      }
+    }
+  }
 }

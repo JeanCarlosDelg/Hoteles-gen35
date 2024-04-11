@@ -3,17 +3,12 @@ import { useForm } from 'react-hook-form'
 import useAuth from '../hooks/useAuth'
 import UserLogged from '../components/LoginPage/UserLogged'
 import { Link, useNavigate } from 'react-router-dom'
-// import { zodResolver } from '@hookform/resolvers/zod'
-// import { userSchemaLogin } from '../components/ValidationsTheForm/userSchema'
 
 const LoginPages = () => {
 
   const [user, setUser] = useState(JSON.parse(localStorage.getItem('user')))
 
   const { register, handleSubmit, reset, formState: { errors } } = useForm()
-  //   {
-  //   resolver: zodResolver(userSchemaLogin)
-  // })
 
   const { loginUser } = useAuth()
 

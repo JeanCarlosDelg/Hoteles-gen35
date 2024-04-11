@@ -1,7 +1,7 @@
 
 import './style/ReserveCard.css'
 
-const ReserveCard = ({ reserve, setReserveSelected, deleteBooking }) => {
+const ReserveCard = ({ reserve, setReserveSelected, deleteBooking, setReviewOpen }) => {
 
   const ckeckIn = new Date(reserve.checkIn)
   const ckeckOut = new Date(reserve.checkOut)
@@ -20,6 +20,7 @@ const ReserveCard = ({ reserve, setReserveSelected, deleteBooking }) => {
       subtotal: reserve.hotel.price * reservationsDays
     }
     setReserveSelected(obj)
+    setReviewOpen(false)
   }
 
   return (
@@ -37,12 +38,12 @@ const ReserveCard = ({ reserve, setReserveSelected, deleteBooking }) => {
       <section className='reserver__info'>
         <ul className='reserver__list'>
           <li className='reserver__item'>
-            <span className='reserver__text'>Reservation Days</span>
+            <span className='reserver__text1'>Reservation Days</span>
             <span className='reserver__number1'>{reservationsDays}</span>
           </li>
           <li className='reserver__item'>
-            <span className='reserver__text'>subtotal Price</span>
-            <span className='reserver__number'>{reserve.hotel.price * reservationsDays}USD</span>
+            <span className='reserver__text2'>subtotal Price</span>
+            <span className='reserver__number'>USD {reserve.hotel.price * reservationsDays}</span>
           </li>
         </ul>
       </section>
