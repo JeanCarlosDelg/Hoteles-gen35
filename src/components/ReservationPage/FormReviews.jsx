@@ -17,10 +17,10 @@ const FormReviews = ({ reserveSelected, reviewOpen, setReviewOpen }) => {
       hotelId: reserveSelected?.hotel.id
     }
     createReview(url, newObj)
-    reset = {
+    reset({
       rating: '',
       comment: ''
-    }
+    })
   }
 
   const reviewClose = () => {

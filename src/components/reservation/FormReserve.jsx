@@ -17,6 +17,10 @@ const FormReserve = ({ hotel }) => {
       "hotelId": Number(hotel?.id)
     }
     createReserver(url, sendObj)
+    reset({
+      "checkIn": '',
+      "checkOut": '',
+    })
   }
 
   return (
