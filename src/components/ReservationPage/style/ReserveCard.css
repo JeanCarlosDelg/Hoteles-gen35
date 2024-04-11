@@ -1,0 +1,103 @@
+.reserver__container {
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 0.6em 0.6em 0.5em rgba(0, 0, 0, 0.288);
+  border-radius: 1.3em;
+  gap: 1em;
+
+  .reserver__sub-cont {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    gap: 1.7em;
+    
+    .reserver__header {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      max-width: 150px;
+      
+      .reserver__img {
+        width: 100%;
+        height: 100%;
+        border-radius: 20px;
+      }
+    }
+    
+    .reserver__hotel {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      width: 100%;
+      max-width: 400px;
+      gap: 0.1em;
+
+      .reserver__coment {
+        font-weight: 500;
+        color: rgb(252, 42, 35);
+        cursor: pointer;
+      }
+    }
+  }
+
+  .reserver__info {
+    width: 100%;
+    max-width: 220px;
+
+    .reserver__list {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 0.5em;
+
+      .reserver__item {
+        display: flex;
+        justify-content: space-around;
+        font-weight: 600;
+
+        .reserver__text {
+          width: 140px;
+        }
+
+        .reserver__number1 {
+          padding-left: 0.5em;
+        }
+      }
+    }
+  }
+
+  .reserver__btn-cont {
+    width: 100%;
+    max-width: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 2em;
+
+    .reserver__btn {
+      width: 45px;
+      height: 45px;
+      border: none;
+      border-radius: 1em;
+      background-color: rgb(253, 93, 87);
+      cursor: pointer;
+
+      .btn-img {
+        font-size: 1.5em;
+        color: white;
+      }
+    }
+  }
+}
+
+
+
+
+
+
+.img__modal {
+  width: 100%;
+  max-width: 300px;
+}

@@ -3,8 +3,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 1em;
-
+  
   .price__name {
     margin-bottom: 0.4em;
   }

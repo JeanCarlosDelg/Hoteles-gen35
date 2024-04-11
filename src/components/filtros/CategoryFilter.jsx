@@ -38,7 +38,7 @@ const CategoryFilter = () => {
       <ul className='cities__filt-list'>
         {
           cities?.map(city => (
-            <div>
+            <div key={city.id}>
               <li className='cities__items' onClick={() => handleFilterCity(city.id)} key={city.id}>{city.name}</li>
               {/* <li className='cities__items' key={city.id}>{city.name}</li>
               <input 

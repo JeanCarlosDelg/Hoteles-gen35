@@ -39,11 +39,11 @@ const HomePage = () => {
         <h1 className='title'>Hotels for reservations</h1>
       </div>
       <div>
-        <FilteresBar 
-          setFilterName={setFilterName} 
+        <FilteresBar
+          setFilterName={setFilterName}
           filterName={filterName}
           setFromTo={setFromTo}
-        /> 
+        />
       </div>
       <div className='hotel__container'>
         {

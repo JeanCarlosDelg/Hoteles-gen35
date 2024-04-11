@@ -9,6 +9,7 @@ import { AiFillStar, AiOutlineStar } from 'react-icons/ai'
 import NavarLogin from '../components/LoginPage/NavarLogin';
 import Slider from '../components/Slider/Slider';
 import UserLoginAndLogaut from '../components/LoginPage/UserLoginAndLogaut';
+import FormReserve from '../components/reservation/FormReserve';
 
 const HotelsIdPage = () => {
 
@@ -63,24 +64,18 @@ const HotelsIdPage = () => {
           {hotel?.description}
         </p>
       </section>
+      <div className='container__reservation'>
+        {
+          localStorage.getItem('token')
+            ? <FormReserve hotel={hotel} />
+            : <span className='span__reserver'>If you want to make a reservation, please <Link className='link' to={'/login'}>login</Link> </span>
+        }
+      </div>
       <div>
         <OtherHotels
           hotel={hotel}
         />
       </div>
-
-      {/* <div className="flex">
-        <div className="caja"> caja 1</div>
-        <div className="caja"> caja 2</div>
-        <div className="caja"> caja 3</div>
-        <div className="caja"> caja 4</div>
-        <div className="caja"> caja 5</div>
-        <div className="caja"> caja 6</div>
-        <div className="caja"> caja 7</div>
-        <div className="caja"> caja 8</div>
-        <div className="caja"> caja 9</div>
-        <div className="caja"> caja 10</div>
-      </div> */}
     </div>
   )
 }
