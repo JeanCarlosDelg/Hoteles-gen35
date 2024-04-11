@@ -2,10 +2,14 @@ import React from 'react'
 import { useForm } from 'react-hook-form'
 import useCrud from '../../hooks/useCrud'
 import './style/FormReview.css'
+import { zodResolver } from '@hookform/resolvers/zod'
+import { userSchemaReview } from '../ValidationsTheForm/userSchema'
 
 const FormReviews = ({ reserveSelected, reviewOpen, setReviewOpen }) => {
 
-  const { handleSubmit, reset, register } = useForm()
+  const { handleSubmit, reset, register, formState: {errors} } = useForm({
+    resolver: zodResolver(userSchemaReview)
+  })
 
   const [, , createReview] = useCrud()
 
@@ -57,16 +61,23 @@ const FormReviews = ({ reserveSelected, reviewOpen, setReviewOpen }) => {
           <label className='review__form-label'>
             <span className='review__form-item'>Rating</span>
             <select className='review__select' {...register('rating')} >
+              <option value=""></option>
               <option value="5">⭐⭐⭐⭐⭐</option>
               <option value="4">⭐⭐⭐⭐</option>
               <option value="3">⭐⭐⭐</option>
               <option value="2">⭐⭐</option>
               <option value="1">⭐</option>
             </select>
+            {
+              errors.rating?.message && <p className='review__errors'>{errors.rating?.message}</p>
+            }
           </label>
           <label className='review__form-label'>
             <span className='review__form-item'>Comments</span>
             <textarea className='review__text-area' {...register('comment')} ></textarea>
+            {
+              errors.comment?.message && <p className='review__errors'>{errors.comment?.message}</p>
+            }
           </label>
           <button className='review__form-btn'>Submit</button>
         </form>
