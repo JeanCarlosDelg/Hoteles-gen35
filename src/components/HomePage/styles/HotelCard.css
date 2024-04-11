@@ -23,6 +23,18 @@
       min-height: 3.5em;
       font-weight: 800;
     }
+    
+    .card__rating{
+      display: flex;
+      align-items: center;
+      color: rgb(230, 207, 3);
+
+      .number__rating {
+        font-weight: 700;
+        color: rgb(219, 14, 14);
+        margin-left: 0.3em;
+      }
+    }
 
 
     .card__city {

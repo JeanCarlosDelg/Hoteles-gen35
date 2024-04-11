@@ -18,11 +18,14 @@ const HotelCard = ({ hotel }) => {
             </header>
             <section className='card__section'>
                 <h3 className='card__name'>{hotel.name}</h3>
-                <p className='card__rating'>{
+                <p className='card__rating'>
+                    {
                     [... new Array(5)].map((star, index) => (
                         index < Math.floor(hotel?.rating) ? <AiFillStar key={index} /> : <AiOutlineStar key={index} />
                     ))
-                }</p>
+                }
+                <span className='number__rating'>{hotel.rating}</span>
+                </p>
                 <span className='card__city'> {hotel.city.name}, {hotel.city.country}</span>
                 <div className='card__price'>$ {hotel.price}</div>
             </section>

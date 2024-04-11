@@ -15,8 +15,19 @@
     }
 
     .details__rating {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.5em;
+      color: rgb(230, 207, 3);
+      
+    }
+    
+    .number__rating {
       font-size: 1.2em;
-      margin-top: 0.2em;
+      font-weight: 700;
+      color: rgb(219, 14, 14);
+      margin-right: 0.5em;
     }
   }
 
@@ -90,6 +101,21 @@
         font-size: 1.2em;
       }
     }
+  }
+
+  .title__comment {
+    font-size: 1.5em;
+    text-align: center;
+    margin-bottom: 1em;
+  }
+
+  .detail__review {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 3em;
+    gap: 2em;
+    padding: 0 2em;
   }
 }
 
