@@ -91,14 +91,14 @@ const HotelsIdPage = () => {
       <h3 className='title__comment'>Comments</h3>
       <div className='detail__review'>
         {
-          review?.total === 0
-            ? <p className='sin__comments'>❌ There are no comments 😪</p>
-            : review?.results.map((review, index) => (
-                <ReviewsCards
-                  key={index}
-                  review={review}
-                />
-              ))
+          review
+            ? review?.results.map((review, index) => (
+              <ReviewsCards
+                key={index}
+                review={review}
+              /> 
+            ))
+            : <p className='sin__comments'>❌ There are no comments 😪</p>
         }
       </div>
     </div>

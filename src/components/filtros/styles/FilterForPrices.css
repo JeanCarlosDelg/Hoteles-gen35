@@ -9,6 +9,7 @@
   }
 
   .price__from {
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -26,6 +27,7 @@
       }
 
       .price__input {
+        padding-left: 0.5em;
         width: 74%;
         border-radius: 0.51em;
         border: 2px solid #e6a0a0d5;

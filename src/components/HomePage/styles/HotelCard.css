@@ -69,3 +69,41 @@
     }
   }
 }
+
+@media screen and (max-width:562px) {
+  
+  .card__container {
+  
+    .card__header {
+      width: 100%;
+      height: 150px;
+  
+      .card__img {
+        width: 100%;
+        height: 145px;
+      }
+  
+    }
+  
+    .card__section {
+      min-height: 115px;
+  
+      .card__name {
+        min-height: 2.8em;
+        font-size: 1em;
+      }
+      
+      .card__rating{
+        font-size: 0.9em;
+      }
+    }
+  
+    .card__footer {
+  
+      .card__btn {
+        border-radius: 1em;
+        font-size: 0.75em;
+      }
+    }
+  }
+}

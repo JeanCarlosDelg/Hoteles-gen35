@@ -19,8 +19,6 @@ const FilterForPrices = ({ setFromTo }) => {
     })
   }
 
-  console.log(errors)
-
   return (
     <section className='price__container'>
       <h3 className='price__name'>Price</h3>

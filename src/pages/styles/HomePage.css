@@ -42,3 +42,18 @@
 
   }
 }
+
+@media screen and (max-width:562px){
+  
+  .hotel__container-total {
+  
+    .hotel__container {
+  
+      .hotel__cards {
+        width: 100%;
+        max-width: 200px;
+      }
+  
+    }
+  }
+}
