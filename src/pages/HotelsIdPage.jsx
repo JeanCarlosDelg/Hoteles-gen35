@@ -91,7 +91,7 @@ const HotelsIdPage = () => {
       <h3 className='title__comment'>Comments</h3>
       <div className='detail__review'>
         {
-          review
+          review || review?.total !== 0
             ? review?.results.map((review, index) => (
               <ReviewsCards
                 key={index}
