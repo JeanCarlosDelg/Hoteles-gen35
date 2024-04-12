@@ -56,13 +56,6 @@ export const userSchemaDate = z
       .refine((date) => new Date(date).toString() !== "Invalid Date", {
         message: "The date is empty.",
       })
-      // .refine((fecha) => fecha > new Date(), {
-      //   message: "la fecha inicia es antigua"
-      // })
-      // .refine((date) => {
-        //   const fechaActual = new Date()
-      //   return date < fechaActual
-      // }, { message: "This date is old"})
       .transform((date) => new Date(date)),
       checkOut: z
       .string()

@@ -12,16 +12,6 @@ const FormReserve = ({ hotel }) => {
     resolver: zodResolver(userSchemaDate)
   })
 
-  // const [antigua, setAntigua] = useState(false)
-  // const [pasado, setPasado] = useState(false)
-
-  // const dia = new Date().getDate().toString()
-  // const mes = (new Date().getMonth() + 1).toString()
-  // const año = new Date().getFullYear().toString()
-  // const fechaActual = año+(-mes)+(-dia)
-
-  // console.log(fechaActual)
-
   const [, , createReserver] = useCrud()
 
   const submit = data => {
@@ -37,8 +27,6 @@ const FormReserve = ({ hotel }) => {
       "checkOut": '',
     })
   }
-
-  console.log(errors)
 
   return (
     <section className='reserve__container'>
