@@ -30,24 +30,45 @@
 
       .reserve__label {
         display: flex;
-        justify-content: space-between;
+        flex-flow: column nowrap;
         align-items: center;
-        margin: 0 0.6em;
-        width: 260px;
-        height: 30px;
+        justify-content: center;
 
-        .reserve__span {
-          font-size: 1.2em;
-          color: rgb(226, 24, 24);
-          font-weight: 600;
+        .caja__form {
+          justify-content: space-between;
+          margin: 0 0.6em;
+          width: 260px;
+          height: 30px;
+          display: flex;
+          flex-flow: row nowrap;
+
+          .reserve__span {
+            font-size: 1.2em;
+            color: rgb(226, 24, 24);
+            font-weight: 600;
+          }
+
+          .reserve__input {
+            font-size: 1em;
+          }
         }
 
-        .reserve__input {
-          font-size: 1em;
+        .message__error {
+          font-size: 0.8em;
+          font-weight: 600;
+          color: rgb(219, 6, 6);
         }
       }
     }
 
+    .container__date-invalid {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      font-size: 0.8em;
+      font-weight: 600;
+      color: rgb(219, 6, 6);
+    }
   }
 }
 

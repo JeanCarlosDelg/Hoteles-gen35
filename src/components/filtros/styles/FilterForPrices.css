@@ -3,7 +3,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  
+
   .price__name {
     margin-bottom: 0.4em;
   }
@@ -32,6 +32,15 @@
         box-shadow: 0 0 0.8em #e6a0a0d5;
       }
     }
+  }
+
+  .contairne__error-filter {
+    color: rgb(226, 9, 9);
+    font-size: 0.7em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0.5em;
   }
 
   .price__btn {
