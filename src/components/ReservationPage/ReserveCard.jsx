@@ -1,4 +1,5 @@
 
+import { Toaster, toast } from 'sonner'
 import './style/ReserveCard.css'
 
 const ReserveCard = ({ reserve, setReserveSelected, deleteBooking, setReviewOpen }) => {
@@ -9,8 +10,9 @@ const ReserveCard = ({ reserve, setReserveSelected, deleteBooking, setReviewOpen
   const reservationsDays = (ckeckOut - ckeckIn) / (1000 * 60 * 60 * 24)
 
   const handleDelete = () => {
-    const url = `https://hotels-api.academlo.tech/bookings/${reserve.id}`
+    const url = `https://entreg6-backend.onrender.com/bookings/${reserve.id}`
     deleteBooking(url, reserve.id)
+    toast.error('Delete successfully')
   }
 
   const handleReview = () => {
@@ -52,6 +54,10 @@ const ReserveCard = ({ reserve, setReserveSelected, deleteBooking, setReviewOpen
           <i className='bx bx-trash btn-img'></i>
         </button>
       </footer>
+      <Toaster 
+        richColors
+        theme='dark'
+      />
     </article>
   )
 }

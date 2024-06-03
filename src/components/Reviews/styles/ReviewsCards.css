@@ -6,6 +6,7 @@
   border: 1px solid black;
   border-radius: 1em;
   box-shadow: 0.6em 0.6em 0.5em rgba(0, 0, 0, 0.288);
+  position: relative;
 
 
   .comment__name {
@@ -16,8 +17,20 @@
   .comment__detail {
     padding: 0 1.5em;
   }
-
+  
   .comment__rating {
+    position: absolute;
+    right: 0.3em;
+    top: 0.3em;
     color: rgb(230, 207, 3);
   }
+}
+
+.sin__comments {
+  font-size: 1.8em;
+}
+
+.title__comment {
+  color: rgb(226, 24, 24);
+  /* font-size: 3em; */
 }

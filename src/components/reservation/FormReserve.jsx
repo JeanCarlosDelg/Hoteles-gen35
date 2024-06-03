@@ -5,6 +5,7 @@ import './styles/FormReserve.css'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { userSchemaDate } from '../ValidationsTheForm/userSchema'
 import { useState } from 'react'
+import { Toaster, toast } from 'sonner'
 
 const FormReserve = ({ hotel }) => {
 
@@ -15,7 +16,7 @@ const FormReserve = ({ hotel }) => {
   const [, , createReserver] = useCrud()
 
   const submit = data => {
-    const url = `https://hotels-api.academlo.tech/bookings`
+    const url = `https://entreg6-backend.onrender.com/bookings`
     const sendObj = {
       "checkIn": data.checkIn,
       "checkOut": data.checkOut,
@@ -26,6 +27,12 @@ const FormReserve = ({ hotel }) => {
       "checkIn": '',
       "checkOut": '',
     })
+    const toastId = toast.loading('Loading...');
+    setTimeout(() => {
+      toast.success('Reservation created successfully', {
+        id: toastId
+      })
+    }, 1000);
   }
 
   return (
@@ -67,6 +74,10 @@ const FormReserve = ({ hotel }) => {
           <button className='reserve__btn'>Submit</button>
         </div>
       </form>
+      <Toaster
+        richColors
+        theme='dark'
+      />
     </section>
   )
 }

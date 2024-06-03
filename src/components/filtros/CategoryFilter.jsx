@@ -7,7 +7,7 @@ import './styles/CategoryFilter.css'
 
 const CategoryFilter = () => {
 
-  const url = 'https://hotels-api.academlo.tech/cities'
+  const url = 'https://entreg6-backend.onrender.com/cities'
   const [cities, getCities] = useFetch(url)
 
   const dispatch = useDispatch()
@@ -20,9 +20,9 @@ const CategoryFilter = () => {
     let url
 
     if (id) {
-      url = `https://hotels-api.academlo.tech/hotels?cityId=${id}`
+      url = `https://entreg6-backend.onrender.com/hotels?cityId=${id}`
     } else {
-      url = 'https://hotels-api.academlo.tech/hotels'
+      url = 'https://entreg6-backend.onrender.com/hotels'
     }
 
     dispatch(getHotelsThunk(url))

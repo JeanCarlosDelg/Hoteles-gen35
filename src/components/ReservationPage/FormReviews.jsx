@@ -4,6 +4,7 @@ import useCrud from '../../hooks/useCrud'
 import './style/FormReview.css'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { userSchemaReview } from '../ValidationsTheForm/userSchema'
+import { Toaster, toast } from 'sonner'
 
 const FormReviews = ({ reserveSelected, reviewOpen, setReviewOpen }) => {
 
@@ -14,7 +15,7 @@ const FormReviews = ({ reserveSelected, reviewOpen, setReviewOpen }) => {
   const [, , createReview] = useCrud()
 
   const submit = data => {
-    const url = 'https://hotels-api.academlo.tech/reviews'
+    const url = 'https://entreg6-backend.onrender.com/reviews'
     const newObj = {
       rating: +data.rating,
       comment: data.comment,
@@ -25,6 +26,13 @@ const FormReviews = ({ reserveSelected, reviewOpen, setReviewOpen }) => {
       rating: '',
       comment: ''
     })
+    const toastId = toast.loading('Loading...');
+    setTimeout(() => {
+      toast.success('Comment created successfully', {
+        id: toastId
+      })
+    }, 1000);
+    setReviewOpen(true)
   }
 
   const reviewClose = () => {
@@ -82,6 +90,10 @@ const FormReviews = ({ reserveSelected, reviewOpen, setReviewOpen }) => {
           <button className='review__form-btn'>Submit</button>
         </form>
       </article>
+      <Toaster 
+        richColors
+        theme='dark'
+      />
     </div>
   )
 }

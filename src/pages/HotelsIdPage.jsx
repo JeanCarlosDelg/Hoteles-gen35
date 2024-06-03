@@ -17,7 +17,7 @@ const HotelsIdPage = () => {
 
   const { id } = useParams()
 
-  const url = `https://hotels-api.academlo.tech/hotels/${id}`
+  const url = `https://entreg6-backend.onrender.com/hotels/${id}`
   const [hotel, getHotel] = useFetch(url)
 
   useEffect(() => {
@@ -29,7 +29,7 @@ const HotelsIdPage = () => {
   const [review, getReview] = useCrud()
 
   useEffect(() => {
-    const url = `https://hotels-api.academlo.tech/reviews?hotelId=${hotel?.id}&userId=${user?.id}`
+    const url = `https://entreg6-backend.onrender.com/reviews?hotelId=${id}&userId=${user?.id}`
     getReview(url)
   }, [id])
 
@@ -91,8 +91,8 @@ const HotelsIdPage = () => {
       <h3 className='title__comment'>Comments</h3>
       <div className='detail__review'>
         {
-          review || review?.total !== 0
-            ? review?.results.map((review, index) => (
+          review && review.length > 0
+            ? review?.map((review, index) => (
               <ReviewsCards
                 key={index}
                 review={review}
