@@ -5,6 +5,7 @@ import './styles/Register.css'
 import { Link, useNavigate } from 'react-router-dom'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { userSchemaRegister } from '../components/ValidationsTheForm/userSchema'
+import { Toaster } from 'sonner'
 
 
 const RegisterPage = () => {
@@ -97,6 +98,10 @@ const RegisterPage = () => {
           </div>
         </div>
       </div>
+      <Toaster 
+        richColors
+        theme='dark'
+      />
     </div>
   )
 }

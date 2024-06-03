@@ -3,6 +3,7 @@ import { useForm } from 'react-hook-form'
 import useAuth from '../hooks/useAuth'
 import UserLogged from '../components/LoginPage/UserLogged'
 import { Link, useNavigate } from 'react-router-dom'
+import { Toaster } from 'sonner'
 
 const LoginPages = () => {
 
@@ -62,6 +63,10 @@ const LoginPages = () => {
           </div>
         </div>
       </div>
+      <Toaster 
+        richColors
+        theme='dark'
+      />
     </div>
   )
 }
