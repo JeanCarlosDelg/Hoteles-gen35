@@ -11,7 +11,6 @@ const useAuth = () => {
     const url = 'https://entreg6-backend.onrender.com/users'
     axios.post(url, data)
       .then(res => {
-        console.log(res.data)
         toast.success('User create successfully')
         navigate('/login')
       })
@@ -26,7 +25,6 @@ const useAuth = () => {
       const url = 'https://entreg6-backend.onrender.com/users/login'
       axios.post(url, data)
       .then(res => {
-        console.log(res.data)
         localStorage.setItem('token', res.data.token)
         localStorage.setItem('user', JSON.stringify(res.data.user))
         toast.success('Login successfully')

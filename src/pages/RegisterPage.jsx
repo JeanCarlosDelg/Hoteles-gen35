@@ -20,7 +20,6 @@ const RegisterPage = () => {
   const navigate = useNavigate()
 
   const submit = data => {
-    console.log(data)
     registerUser(data)
     reset({
       firstName: '',
