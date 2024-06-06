@@ -15,7 +15,7 @@ const FormReviews = ({ reserveSelected, reviewOpen, setReviewOpen }) => {
   const [, , createReview] = useCrud()
 
   const submit = data => {
-    const url = 'https://entreg6-backend.onrender.com/reviews'
+    const url = 'https://jeancda-booking-app.onrender.com/reviews'
     const newObj = {
       rating: +data.rating,
       comment: data.comment,

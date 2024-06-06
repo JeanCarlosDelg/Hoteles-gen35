@@ -8,7 +8,7 @@ const useAuth = () => {
 
   // Register
   const registerUser = (data) => {
-    const url = "https://entreg6-backend.onrender.com/users";
+    const url = "https://jeancda-booking-app.onrender.com/users";
     axios
       .post(url, data)
       .then((res) => {
@@ -22,7 +22,7 @@ const useAuth = () => {
 
   // Login
   const loginUser = (data) => {
-    const url = "https://entreg6-backend.onrender.com/users/login";
+    const url = "https://jeancda-booking-app.onrender.com/users/login";
     axios
       .post(url, data)
       .then((res) => {
@@ -42,7 +42,7 @@ const useAuth = () => {
     
     // Delete
     const remove = (id) => {
-      const url = `https://entreg6-backend.onrender.com/users/${id}`;
+      const url = `https://jeancda-booking-app.onrender.com/users/${id}`;
     axios
     .delete(url, getConfigToken())
     .then((res) => {
@@ -55,7 +55,7 @@ const useAuth = () => {
     
     // Verification
     const verify = (code) => {
-      const url = `https://entreg6-backend.onrender.com/users/verify/${code}`;
+      const url = `https://jeancda-booking-app.onrender.com/users/verify/${code}`;
     axios
     .get(url)
     .then((res) => {
@@ -66,7 +66,7 @@ const useAuth = () => {
 
   // Reset Password
   const resetPass = (data) => {
-    const url = `https://entreg6-backend.onrender.com/users/reset_password`
+    const url = `https://jeancda-booking-app.onrender.com/users/reset_password`
     axios.post(url, data)
     .then((res) => {
       localStorage.setItem('code', res.data.code)
@@ -92,7 +92,7 @@ const useAuth = () => {
   
   // Reset Password Code
   const resetPassCode = (code, data) => {
-    const url = `https://entreg6-backend.onrender.com/users/reset_password/${code}`
+    const url = `https://jeancda-booking-app.onrender.com/users/reset_password/${code}`
     axios.post(url, data)
     .then((res) => {
       localStorage.removeItem("code");

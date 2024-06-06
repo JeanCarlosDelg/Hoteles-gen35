@@ -7,7 +7,7 @@ import './styles/CategoryFilter.css'
 
 const CategoryFilter = () => {
 
-  const url = 'https://entreg6-backend.onrender.com/cities'
+  const url = 'https://jeancda-booking-app.onrender.com/cities'
   const [cities, getCities] = useFetch(url)
 
   const dispatch = useDispatch()
@@ -20,9 +20,9 @@ const CategoryFilter = () => {
     let url
 
     if (id) {
-      url = `https://entreg6-backend.onrender.com/hotels?cityId=${id}`
+      url = `https://jeancda-booking-app.onrender.com/hotels?cityId=${id}`
     } else {
-      url = 'https://entreg6-backend.onrender.com/hotels'
+      url = 'https://jeancda-booking-app.onrender.com/hotels'
     }
 
     dispatch(getHotelsThunk(url))
