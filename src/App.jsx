@@ -21,7 +21,6 @@ function App() {
 
   useEffect(() => {
     // const url = 'https://hotels-(borrar)api.academlo.tech/hotels'
-    // const url = 'https://entreg6-backend.onrender.com/hotels'
     const url = 'https://entreg6-backend.onrender.com/hotels'
     dispatch(getHotelsThunk(url))
   }, [])
