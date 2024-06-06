@@ -24,7 +24,7 @@ const ReservationsPage = () => {
   const [bookings, getBookings, , deleteBooking] = useCrud()
 
   useEffect(() => {
-    const url = `https://entreg6-backend.onrender.com/bookings`
+    const url = `http://localhost:8080/bookings`
     getBookings(url)
   }, [])
 

@@ -5,7 +5,7 @@ import './styles/Register.css'
 import { Link, useNavigate } from 'react-router-dom'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { userSchemaRegister } from '../components/ValidationsTheForm/userSchema'
-import { Toaster } from 'sonner'
+import { Toaster, toast } from 'sonner'
 
 
 const RegisterPage = () => {
@@ -20,7 +20,9 @@ const RegisterPage = () => {
   const navigate = useNavigate()
 
   const submit = data => {
-    registerUser(data)
+    const frontBaseUrl = `${location.protocol}//${location.host}/#/verify`
+    const body = { ...data, frontBaseUrl }
+    registerUser(body)
     reset({
       firstName: '',
       lastName: '',
@@ -28,6 +30,15 @@ const RegisterPage = () => {
       password: '',
       gender: 'unknown'
     })
+    const toastId = toast.loading('Loading...')
+    setTimeout(() => {
+      toast.success("A verification has been sent to your email", {
+        id: toastId
+      });
+    }, 1000)
+    setTimeout(() => {
+      navigate("/login");
+    }, 2000)
   }
 
   const handleNavigateLogin = () => {
@@ -97,7 +108,7 @@ const RegisterPage = () => {
           </div>
         </div>
       </div>
-      <Toaster 
+      <Toaster
         richColors
         theme='dark'
       />

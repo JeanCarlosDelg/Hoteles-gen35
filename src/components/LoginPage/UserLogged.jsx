@@ -1,11 +1,20 @@
 import { Link } from 'react-router-dom'
 import './slyle/UserLogged.css'
+import { useState } from 'react'
+import UserDelete from './UserDelete'
 
 const UserLogged = ({ setUser, user }) => {
+
+  const [deleteIsClose, setDeleteIsClose] = useState(true)
+
+  const handleDelete = () => {
+    setDeleteIsClose(false)
+  }
 
   const handleLogout = () => {
     localStorage.removeItem('token')
     localStorage.removeItem('user')
+    localStorage.removeItem('userData')
     setUser()
   }
 
@@ -30,7 +39,17 @@ const UserLogged = ({ setUser, user }) => {
           {user.firstName} {user.lastName}
         </h2>
         <h3 className='perfil__email'>{user.email}</h3>
-        <button className='perfil__btn' onClick={handleLogout}>Logout</button>
+        <div className='perfil__btn'>
+        <button className='perfil__btn-logout' onClick={handleLogout}>Logout</button>
+        <button className='perfil__btn-delete' onClick={handleDelete}>Delete acount</button>
+        </div>
+        <div>
+          <UserDelete 
+            deleteIsClose={deleteIsClose}
+            setDeleteIsClose={setDeleteIsClose}
+            user={user}
+          />
+        </div>
       </article>
     </div>
   )

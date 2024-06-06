@@ -10,7 +10,7 @@ const ReserveCard = ({ reserve, setReserveSelected, deleteBooking, setReviewOpen
   const reservationsDays = (ckeckOut - ckeckIn) / (1000 * 60 * 60 * 24)
 
   const handleDelete = () => {
-    const url = `https://entreg6-backend.onrender.com/bookings/${reserve.id}`
+    const url = `http://localhost:8080/bookings/${reserve.id}`
     deleteBooking(url, reserve.id)
     toast.error('Delete successfully')
   }

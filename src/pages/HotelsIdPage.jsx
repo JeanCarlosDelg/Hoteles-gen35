@@ -17,7 +17,7 @@ const HotelsIdPage = () => {
 
   const { id } = useParams()
 
-  const url = `https://entreg6-backend.onrender.com/hotels/${id}`
+  const url = `http://localhost:8080/hotels/${id}`
   const [hotel, getHotel] = useFetch(url)
 
   useEffect(() => {
@@ -29,7 +29,7 @@ const HotelsIdPage = () => {
   const [review, getReview] = useCrud()
 
   useEffect(() => {
-    const url = `https://entreg6-backend.onrender.com/reviews?hotelId=${id}&userId=${user?.id}`
+    const url = `http://localhost:8080/reviews?hotelId=${id}&userId=${user?.id}`
     getReview(url)
   }, [id])
 

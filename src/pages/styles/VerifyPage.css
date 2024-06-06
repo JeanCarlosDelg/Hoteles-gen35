@@ -1,0 +1,46 @@
+.verify__cotainer {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  padding: 0 1.5em;
+
+  .verify__welcome {
+    margin-top: 1em;
+    margin-bottom: 0.3em;
+    font-size: 3.3rem;
+    color: rgb(175, 12, 12);
+  }
+
+  .verify__name {
+    font-size: 2rem;
+    text-transform: uppercase;
+    margin-bottom: 0.2em;
+    text-decoration: underline;
+  }
+
+  .verify__email {
+    font-size: 1.5rem;
+
+    .verify__span {
+      color: rgb(175, 12, 12);
+    }
+  }
+
+  .verify__logo-container {
+    font-size: 12rem;
+    margin-top: 0.2em;
+    color: #023f0a;
+  }
+
+  .btn__login {
+    text-decoration: none;
+    background-color: #b30909;
+    box-shadow: 0 0 .8em #e02323f1;
+    border: none;
+    border-radius: 0.6em;
+    padding: 0.2em 2.5em;
+    font-size: 1.8rem;
+    color: rgb(200, 201, 202);
+  }
+}
