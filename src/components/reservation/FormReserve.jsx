@@ -16,7 +16,7 @@ const FormReserve = ({ hotel }) => {
   const [, , createReserver] = useCrud()
 
   const submit = data => {
-    const url = `http://localhost:8080/bookings`
+    const url = `https://entreg6-backend.onrender.com/bookings`
     const sendObj = {
       "checkIn": data.checkIn,
       "checkOut": data.checkOut,

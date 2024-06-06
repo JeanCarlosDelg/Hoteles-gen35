@@ -5,7 +5,7 @@ import './styles/OtherHotels.css'
 
 const OtherHotels = ({ hotel }) => {
 
-  const url = `http://localhost:8080/hotels?cityId=${hotel?.cityId}`
+  const url = `https://entreg6-backend.onrender.com/hotels?cityId=${hotel?.cityId}`
   const [hotelsInCity, getHotelsInCity] = useFetch(url)
 
   useEffect(() => {

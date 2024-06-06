@@ -52,6 +52,7 @@ const LoginPages = () => {
             <label className='form__label'>
               <span className='form__item'>Password</span>
               <input className='form__value' required {...register('password')} type="password" />
+              <Link className='reset__password' to='/reset_password' >Forgot your passsword</Link>
             </label>
             <button className='form__btn'>Submit</button>
           </form>

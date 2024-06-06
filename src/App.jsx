@@ -10,6 +10,9 @@ import { getHotelsThunk } from './store/states/Hotels.slice'
 import ReservationsPage from './pages/ReservationsPage'
 import ProtectecRoute from './pages/ProtectecRoute'
 import VerifyPage from './pages/VerifyPage'
+import ResetPassPage from './pages/ResetPassPage'
+import ResetPassCode from './components/resetPassCode/ResetPassCode'
+import ProtectecRouteCode from './pages/ProtectedRouterCode'
 
 
 function App() {
@@ -18,8 +21,8 @@ function App() {
 
   useEffect(() => {
     // const url = 'https://hotels-(borrar)api.academlo.tech/hotels'
-    // const url = 'https://entreg6-(borrar)backend.onrender.com/hotels'
-    const url = 'http://localhost:8080/hotels'
+    // const url = 'https://entreg6-backend.onrender.com/hotels'
+    const url = 'https://entreg6-backend.onrender.com/hotels'
     dispatch(getHotelsThunk(url))
   }, [])
 
@@ -32,9 +35,12 @@ function App() {
         <Route path='/register' element={<RegisterPage />} />
         <Route path='/login' element={<LoginPages />} />
         <Route path='/verify/:email_code' element={<VerifyPage />} />
-        {/* <Route path='/reset_password' element={< />} /> */}
+        <Route path='/reset_password' element={<ResetPassPage />} />
         <Route element={<ProtectecRoute />} >
           <Route path='/reservations' element={<ReservationsPage />} />
+        </Route>
+        <Route element={<ProtectecRouteCode />} >
+        <Route path='/reset_password/:code' element={<ResetPassCode />} />
         </Route>
       </Routes>
     </div>

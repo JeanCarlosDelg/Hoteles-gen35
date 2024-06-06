@@ -8,7 +8,7 @@ const useAuth = () => {
 
   // Register
   const registerUser = (data) => {
-    const url = "http://localhost:8080/users";
+    const url = "https://entreg6-backend.onrender.com/users";
     axios
       .post(url, data)
       .then((res) => {
@@ -20,9 +20,9 @@ const useAuth = () => {
       });
   };
 
-  // login
+  // Login
   const loginUser = (data) => {
-    const url = "http://localhost:8080/users/login";
+    const url = "https://entreg6-backend.onrender.com/users/login";
     axios
       .post(url, data)
       .then((res) => {
@@ -38,33 +38,77 @@ const useAuth = () => {
         localStorage.removeItem("user");
         toast.error(err.response?.data.message);
       });
-  };
-
-  //delete
-  const remove = (id) => {
-    const url = `http://localhost:8080/users/${id}`;
+    };
+    
+    // Delete
+    const remove = (id) => {
+      const url = `https://entreg6-backend.onrender.com/users/${id}`;
     axios
-      .delete(url, getConfigToken())
-      .then((res) => {
+    .delete(url, getConfigToken())
+    .then((res) => {
         console.log('Delete correctly');
       })
       .catch((err) => {
         console.log(err);
       });
-  };
-
-  // Verification
-  const verify = (code) => {
-    const url = `http://localhost:8080/users/verify/${code}`;
+    };
+    
+    // Verification
+    const verify = (code) => {
+      const url = `https://entreg6-backend.onrender.com/users/verify/${code}`;
     axios
-      .get(url)
-      .then((res) => {
-        console.log('Verified correctly');
-      })
-      .catch((err) => console.log(err));
+    .get(url)
+    .then((res) => {
+      console.log('Verified correctly');
+    })
+    .catch((err) => console.log(err));
   };
 
-  return { registerUser, loginUser, remove, verify };
+  // Reset Password
+  const resetPass = (data) => {
+    const url = `https://entreg6-backend.onrender.com/users/reset_password`
+    axios.post(url, data)
+    .then((res) => {
+      localStorage.setItem('code', res.data.code)
+      const toastId = toast.loading('loading...')
+      setTimeout(() => {
+        toast.success('Check your email', {
+          id: toastId
+        })
+      }, 1000)
+      setTimeout(() => {
+        navigate('/')
+      }, 2000)
+    })
+    .catch((err) => {
+      const toastId = toast.loading('loading...')
+      setTimeout(() => {
+        toast.error(err.response?.data.message, {
+          id: toastId
+        })
+      }, 1000)
+    })
+  };
+  
+  // Reset Password Code
+  const resetPassCode = (code, data) => {
+    const url = `https://entreg6-backend.onrender.com/users/reset_password/${code}`
+    axios.post(url, data)
+    .then((res) => {
+      localStorage.removeItem("code");
+      const toastId = toast.loading('loading...')
+      setTimeout(() => {
+        toast.success('Your password was changed successfully', {
+          id: toastId
+        })
+      }, 1000)
+    })
+    .catch((err) => {
+      console.log('Your request was not completed, please try again')
+    })
+  };
+
+  return { registerUser, loginUser, remove, verify, resetPass, resetPassCode };
 };
 
 export default useAuth;
